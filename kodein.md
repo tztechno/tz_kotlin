@@ -3,7 +3,30 @@
 ###
 
 ---
+```
+ ./gradlew run
 
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Task 'run' not found in root project 'myapp' and its subprojects.
+
+* Try:
+> Run gradlew tasks to get a list of available tasks.
+> For more on name expansion, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:name_abbreviation in the Gradle documentation.
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 978ms
+```
 ---
 
 Kotlinのプロジェクトで、`Main.kt`ファイルの位置をルートディレクトリに近い場所に変更する場合の手順を以下に示します。
