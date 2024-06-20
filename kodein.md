@@ -10,6 +10,132 @@
 
 ---
 
+Visual Studio Code (VS Code)を使用して、Kotlinプロジェクトを作成し、Kodeinを設定する手順を説明します。以下の手順に従って、macOS上でVS Codeを使用してKotlinプロジェクトをセットアップし、Kodeinをインストールします。
+
+### 1. 必要なツールをインストールする
+
+#### a. Java Development Kit (JDK) をインストール
+
+まず、JDKがインストールされていることを確認します。インストールされていない場合、[AdoptOpenJDK](https://adoptopenjdk.net/)からJDKをインストールします。
+
+```bash
+brew install openjdk@11
+```
+
+#### b. Gradleをインストール
+
+Gradleがインストールされていることを確認します。インストールされていない場合、Homebrewを使用してインストールします。
+
+```bash
+brew install gradle
+```
+
+#### c. Kotlin PluginをVS Codeにインストール
+
+VS Codeの拡張機能マーケットプレイスから「Kotlin」プラグインをインストールします。
+
+### 2. プロジェクトの作成
+
+#### a. 新しいプロジェクトディレクトリを作成
+
+ターミナルで新しいディレクトリを作成し、その中に移動します。
+
+```bash
+mkdir MyKodeinProject
+cd MyKodeinProject
+```
+
+#### b. Gradleプロジェクトを初期化
+
+以下のコマンドを実行して、Gradleプロジェクトを初期化します。
+
+```bash
+gradle init --type java-application
+```
+
+Gradleの初期化ウィザードに従って、プロジェクトを設定します。例えば、プロジェクト名を `MyKodeinProject` とし、他の設定はデフォルトのままにします。
+
+### 3. Gradle設定ファイルの編集
+
+#### a. `build.gradle` ファイルを編集
+
+`build.gradle` ファイルを以下のように編集し、KotlinとKodeinの依存関係を追加します。
+
+```groovy
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.8.0' // 最新バージョンを確認してください
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.kodein.di:kodein-di:7.10.0" // 最新バージョンを確認してください
+    testImplementation 'junit:junit:4.13.2'
+}
+
+application {
+    mainClass = 'com.example.MainKt'
+}
+```
+
+### 4. Kotlinファイルの作成
+
+#### a. プロジェクト構造の設定
+
+以下のディレクトリ構造を作成します。
+
+```
+MyKodeinProject
+├── build.gradle
+├── gradle
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── src
+    ├── main
+    │   └── kotlin
+    │       └── com
+    │           └── example
+    │               └── Main.kt
+    └── test
+        └── kotlin
+```
+
+#### b. `Main.kt` ファイルを作成
+
+`src/main/kotlin/com/example/Main.kt` ファイルを作成し、以下のコードを追加します。
+
+```kotlin
+package com.example
+
+import org.kodein.di.*
+import org.kodein.di.bindings.*
+import org.kodein.di.jxinject.jx
+
+fun main() {
+    val kodein = DI {
+        bind<String>() with singleton { "Hello, Kodein!" }
+    }
+
+    val hello: String by kodein.instance()
+    println(hello) // Prints "Hello, Kodein!"
+}
+```
+
+### 5. プロジェクトのビルドと実行
+
+ターミナルでプロジェクトのルートディレクトリに移動し、以下のコマンドを実行してプロジェクトをビルドし、実行します。
+
+```bash
+./gradlew run
+```
+
+これで、Kotlinプロジェクトが正常にビルドされ、Kodeinによる依存性注入が機能していることを確認できます。
+
 ---
 
 
