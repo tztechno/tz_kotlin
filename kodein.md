@@ -7,7 +7,42 @@
 ---
 
 ---
+```
 
+gradle init --type java-application
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+Enter target Java version (min: 7, default: 21): 
+
+Project name (default: myapp): 
+
+Select application structure:
+  1: Single application project
+  2: Application and library project
+Enter selection (default: Single application project) [1..2] 1
+
+Select build script DSL:
+  1: Kotlin
+  2: Groovy
+Enter selection (default: Kotlin) [1..2] 1
+
+Select test framework:
+  1: JUnit 4
+  2: TestNG
+  3: Spock
+  4: JUnit Jupiter
+Enter selection (default: JUnit Jupiter) [1..4] 1
+
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] n
+
+
+> Task :init
+To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.8/samples/sample_building_java_applications.html
+
+BUILD SUCCESSFUL in 58s
+1 actionable task: 1 executed
+
+```
 ---
 
 Visual Studio Code (VS Code)を使用して、Kotlinプロジェクトを作成し、Kodeinを設定する手順を説明します。以下の手順に従って、macOS上でVS Codeを使用してKotlinプロジェクトをセットアップし、Kodeinをインストールします。
