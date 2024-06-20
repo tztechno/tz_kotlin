@@ -6,6 +6,77 @@
 
 ---
 
+Kotlinのプロジェクトで、`Main.kt`ファイルの位置をルートディレクトリに近い場所に変更する場合の手順を以下に示します。
+
+### プロジェクト構造
+
+プロジェクト構造を以下のように簡素化します。
+
+```
+MyKodeinProject
+├── build.gradle
+├── gradle
+├── gradlew
+├── gradlew.bat
+├── settings.gradle
+└── src
+    ├── main
+    │   └── kotlin
+    │       └── Main.kt
+    └── test
+        └── kotlin
+```
+
+### `Main.kt`の作成
+
+`src/main/kotlin/Main.kt`ファイルを作成し、以下のコードを追加します。
+
+```kotlin
+fun main() {
+    val kodein = DI {
+        bind<String>() with singleton { "Hello, Kodein!" }
+    }
+
+    val hello: String by kodein.instance()
+    println(hello) // Prints "Hello, Kodein!"
+}
+```
+
+### `build.gradle`の編集
+
+`build.gradle`ファイルを以下のように編集します。
+
+```groovy
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.8.0' // 最新バージョンを確認してください
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.kodein.di:kodein-di:7.10.0" // 最新バージョンを確認してください
+    testImplementation 'junit:junit:4.13.2'
+}
+
+application {
+    mainClass = 'MainKt'
+}
+```
+
+### プロジェクトのビルドと実行
+
+ターミナルでプロジェクトのルートディレクトリに移動し、以下のコマンドを実行してプロジェクトをビルドし、実行します。
+
+```bash
+./gradlew run
+```
+
+これで、`Main.kt`ファイルがルートに近い位置にある状態で、Kotlinプロジェクトが正常にビルドされ、Kodeinによる依存性注入が機能していることを確認できます。
+
 ---
 ```
 
