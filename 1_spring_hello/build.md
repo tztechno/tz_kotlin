@@ -2,6 +2,8 @@
 2024-06-27
 
 initializer使用
+https://start.spring.io/
+
 project kotlin, language kotlin
 
 myapp/
