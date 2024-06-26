@@ -1,3 +1,6 @@
+```
+initializer使用
+project kotlin, language kotlin
 
 myapp/
 │
@@ -24,3 +27,4 @@ cd myapp
 
 http://localhost:8080
 
+```
