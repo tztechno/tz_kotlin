@@ -1,4 +1,6 @@
 ```
+2024-06-27
+
 initializer使用
 project kotlin, language kotlin
 
