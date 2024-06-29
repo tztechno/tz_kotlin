@@ -1,3 +1,5 @@
+
+```
 initializerにて
 project: maven
 lang: kotlin
@@ -12,8 +14,11 @@ http://localhost:8080 helloworld成功
 次にsrc/main/resources/static/index.htmlをホストする
 
 Spring initializerでproject maven, lang kotlinで生成させたものを置きhello表示に成功したので、次にsrc/main/resources/static/index.htmlをホストする
+```
 
 ---
+
+```
 
 素晴らしいですね！次のステップとして、静的なHTMLファイルをホストしましょう。以下の手順で `index.html` をホストできます：
 
@@ -22,6 +27,7 @@ Spring initializerでproject maven, lang kotlinで生成させたものを置き
 
 2. HTMLコンテンツの追加:
    `index.html` に以下のような基本的なHTMLコンテンツを追加します：
+```
 
 ```html
 <!DOCTYPE html>
@@ -61,8 +67,9 @@ HTMLファイルを作成した後、何か問題が発生した場合や、さ�
 
 
 ---
-
+```
 cd myapp
 ./mvnw clean install
 ./mvnw spring-boot:run
 http://localhost:8080
+```
