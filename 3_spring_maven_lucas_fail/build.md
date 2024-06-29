@@ -49,7 +49,13 @@ Spring initializerでproject maven, lang kotlinで生成させたものを置き
 注意点：
 - Spring Bootは、デフォルトで `src/main/resources/static/` ディレクトリ内の静的ファイルを自動的に提供します。
 - `index.html` はルートURL（`/`）にマッピングされるため、別途コントローラーを作成する必要はありません。
-- 以前作成した `HelloController` クラスがルートURL（`/`）にマッピングされている場合、それを変更または削除する必要があります。静的ファイルよりもコントローラーのマッピングが優先されるためです。
+- 以前作成した `HelloController` クラスがルートURL（`/`）にマッピングされているので、それを変更する必要があります。
+- 静的ファイルよりもコントローラーのマッピングが優先されるためです。
+
+@GetMapping("/hello")
+fun hello(): String {
+    return "Hello, World!"
+}
 
 HTMLファイルを作成した後、何か問題が発生した場合や、さらに機能を追加したい場合は、お知らせください。サポートいたします。
 
