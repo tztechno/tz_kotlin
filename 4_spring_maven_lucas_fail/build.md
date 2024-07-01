@@ -1,3 +1,5 @@
+
+```
 initializerにて
 project: maven
 lang: kotlin
@@ -12,6 +14,7 @@ http://localhost:8080 helloworld成功
 次にsrc/main/resources/static/index.htmlをホストする
 
 Spring initializerでproject maven, lang kotlinで生成させたものを置きhello表示に成功したので、次にsrc/main/resources/static/index.htmlをホストする
+```
 
 ---
 
