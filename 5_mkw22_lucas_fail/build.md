@@ -6,6 +6,10 @@ http://localhost:8080
 
 ---
 
+まず、偶数奇数の判定を成功させてから、lucasに移行すべき
+
+---
+
 
 Initializer kotlin mavenでmyappをセットした」
 myapp/src/main/resources/static/index.html
